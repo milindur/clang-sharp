@@ -12,6 +12,11 @@
             get { return new Type(Interop.clang_getArrayElementType(Native)); }
         }
 
+        public long ArraySize
+        {
+            get { return Interop.clang_getArraySize(Native); }
+        }
+
         public Type Canonical {
             get { return new Type(Interop.clang_getCanonicalType(Native)); }
         }

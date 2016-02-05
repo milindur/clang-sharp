@@ -180,6 +180,16 @@ namespace ClangSharp {
             get { return new Type(Interop.clang_getEnumDeclIntegerType(Native)); }
         }
 
+        public long EnumConstantDeclValue
+        {
+            get { return Interop.clang_getEnumConstantDeclValue(Native); }
+        }
+
+        public int FieldDeclBitWidth
+        {
+            get { return Interop.clang_getFieldDeclBitWidth(Native); }
+        }
+
         public Type ResultType {
             get { return new Type(Interop.clang_getCursorResultType(Native)); }
         }

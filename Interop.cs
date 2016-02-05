@@ -271,10 +271,19 @@ namespace ClangSharp {
         public static extern Type clang_getCursorType(Cursor c);
 
         [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
+        public static extern ClangString clang_getTypeSpelling(Type c);
+
+        [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
         public static extern Type clang_getTypedefDeclUnderlyingType(Cursor c);
 
         [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
         public static extern Type clang_getEnumDeclIntegerType(Cursor c);
+
+        [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
+        public static extern long clang_getEnumConstantDeclValue(Cursor c);
+
+        [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
+        public static extern int clang_getFieldDeclBitWidth(Cursor c);
 
         [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
         public static extern uint clang_getNumOverloadedDecls(Cursor c);
@@ -314,6 +323,9 @@ namespace ClangSharp {
 
         [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
         internal static extern Type clang_getArrayElementType(Type t);
+
+        [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
+        public static extern long clang_getArraySize(Type t);
 
         [DllImport(nativeLib, CallingConvention = convention, CharSet = charSet)]
         internal static extern int clang_getNumArgTypes(Type t);
