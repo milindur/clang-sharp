@@ -189,7 +189,7 @@
                     case Kind.Pointer:
                         return Pointee.Spelling + "*";
                     default:
-                        return Declaration.Spelling;
+                        return Interop.clang_getTypeSpelling(Native).ManagedString ?? string.Empty;
                 }
             }
         }
